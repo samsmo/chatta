@@ -1,8 +1,8 @@
 module.exports = function(mongoose){
-	var Schema = mongoose.schema,
+	var Schema = mongoose.Schema,
 		ObjectId = Schema.ObjectId,
 
-		song = new Schema {
+		song = new Schema ({
 			artist   : { type: String, required: true, trim: false },
 			name     : { type: String, required: true, trim: false },
 			url 	 : { type: String, required: true, trim: false },
@@ -11,15 +11,22 @@ module.exports = function(mongoose){
 						 likes: Number,
 						 dislikes: Number
 					   }
-		},
-		playList = new Schema {
+		}),
+
+		playList = new Schema ({
 			author	: ObjectId,
 			songs	: [song],
 			meta	: {
 						upvotes		: Number,
 						downvotes	: Number,
-						tags		: [String]
+						tags		: [String],
 						favs		: Number
 					  }
-		}
+		}),
+
+		model = {
+			Song: mongoose.model('Song', song),
+			PlayList: mongoose.model('PlayList', playList)
+		};
+	return model;
 }

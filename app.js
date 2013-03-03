@@ -23,6 +23,9 @@ app.configure('development', function(){
 /* set up router */
 require('./libs/router')(app, { verbose: !module.parent });
 
+/* error handlings */
+
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
