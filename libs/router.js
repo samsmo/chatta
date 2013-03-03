@@ -2,8 +2,8 @@ var express = require('express'),
 	fs = require('fs');
 module.exports = function(parent, opts){
 	var verbose = opts.verbose;
-	 fs.readdirSync(__dirname + '/../app/models').forEach(function(name){
-	 	var obj = require('./../app/models/' + name),
+	 fs.readdirSync(__dirname + '/../app/controllers').forEach(function(name){
+	 	var obj = require('./../app/controllers/' + name),
 	 		name = obj.name || name,
 	 		app = express(),
 	 		path,
