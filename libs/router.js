@@ -11,6 +11,7 @@ module.exports = function(parent, opts){
 	 	
 	 	app.set('views', __dirname + '/../app/views/' + name + '/');
 	 	// generate routes based
+
 	 	for(var k in obj){
 	 		if(typeof obj[k] !== "function") continue;
 	 		switch(k){
@@ -35,8 +36,10 @@ module.exports = function(parent, opts){
 	 				path = '/' + name;
 	 			break;
 	 			case 'create':
+
 	 				method = 'post';
 	 				path = '/' + name + '/create';
+	 			break;
 	 			default:
 	 				throw new Error('route not found:'+name+'.'+k);
 	 		}

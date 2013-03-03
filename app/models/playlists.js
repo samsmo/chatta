@@ -15,7 +15,9 @@ module.exports = function(mongoose){
 
 		playList = new Schema ({
 			author	: ObjectId,
+			title	: { type: String, required: true, trim: true },
 			songs	: [song],
+			created : Date,
 			meta	: {
 						upvotes		: Number,
 						downvotes	: Number,

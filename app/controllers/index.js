@@ -1,9 +1,13 @@
-var db = require('./../../libs/connection');
+var db = require('./../../libs/connection'),
+	model= db.useModel('playlists').PlayList;
 module.exports = {
 	name: 'index',
-	model: db.useModel('playlists'),
-	index: function(req, res){
+	index: function(req, res, next){
 		
-		res.render('index', {title: 'hell yes', text: "once upon a timezzeze"});	
+		model.findOne({},{},{'created_at': -1}, function(err, post){
+			if(err || !post) return
+			console.log(post);
+		});
+		res.render('index', {title: 'Chatta', text: "create a playlist!"});	
 	}
 }

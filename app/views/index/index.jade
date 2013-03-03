@@ -3,3 +3,12 @@ extends ../layout
 block content
 	h1=title
 	p=text
+
+	form(action='/playlists/create', method='post')
+		fieldset
+			label(for="title") Playlist Title
+				input(type="text", value="", placeholder="", name="title")
+		fieldset
+			label(for="tags") Tags
+				input(type="text", value="", placeholder="", name="tags")
+		input(type='submit',value='Sign Up',data-transition='fade', data-theme='c')
