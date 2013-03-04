@@ -8,6 +8,6 @@ module.exports = {
 			if(err || !post) return
 			console.log(post);
 		});
-		res.render('index', {title: 'Chatta', text: "create a playlist!"});	
+		res.render('index', {title: 'Chatta', text: "create a playlist!", scripts: ['javascript/plugins/jquery-1.9.1.min.js','javascript/form.js']});	
 	}
 }
