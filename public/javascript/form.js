@@ -7,12 +7,13 @@ $(function(){
 	*/
 	var tagArray = [],
 		el = $('.tags'),
-
+		field = $('#tags'),
 		parseString = function(e){
 			var string = $(e.currentTarget).val().replace(/\s/g, '');
 			if(string !== ""){
 				tagArray.push(string);
-				el.append('<span class="label label-inverse">'+string+'</span>')
+				el.append('<span class="label label-inverse">'+string+'</span>');
+				field.val(tagArray);
 			}
 			$(e.currentTarget).val("");
 		};

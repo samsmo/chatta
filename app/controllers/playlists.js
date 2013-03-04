@@ -1,7 +1,9 @@
 module.exports = {
 	name: 'playlists',
 	create: function(req, res){
-		console.log(req.body);
-		res.render('index',{title: 'chatta', text:req.body});
+		var tags;
+		tags = req.body.tags.split(',');
+		console.log(tags);
+		//res.render('index',{title: 'chatta', text:req.body});
 	}
 }
